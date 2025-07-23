@@ -6,7 +6,7 @@
     "dev": "concurrently \"npx convex dev\" \"next dev --turbopack\"",
     "dev:next": "next dev --turbopack",
     "dev:convex": "npx convex dev",
-    "build": "npx convex deploy && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "npx convex deploy"
