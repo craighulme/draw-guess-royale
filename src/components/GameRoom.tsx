@@ -100,7 +100,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
         userId,
         isLive: false,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting stroke:', error);
     }
   };
@@ -117,7 +117,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
         userId,
         isLive: true,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting live stroke:', error);
     }
   };
@@ -130,7 +130,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
         roomId,
         userId,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error undoing stroke:', error);
     }
   };
@@ -202,7 +202,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
         roomId,
         hostId: userId,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error starting game:', error);
       toast.error('❌ Failed to start game', {
         description: error?.message || 'Please try again'
@@ -289,7 +289,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
       toast.success('📧 Invite sent successfully!', {
         description: `Invitation sent to ${inviteEmail}`
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending invite:', error);
       toast.error('❌ Failed to send invite', {
         description: error?.message || 'Please check the email address and try again'
@@ -375,7 +375,7 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
         });
         
         console.log('Canvas image saved successfully');
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error saving canvas image:', error);
         // Don't show error to user as this is a background operation
       }
@@ -419,11 +419,11 @@ export default function GameRoom({ roomId, userId, userName }: GameRoomProps) {
             });
             console.log('Force canvas save successful');
           }
-        } catch (error) {
+        } catch (error: any) {
           console.error('Error in force canvas save:', error);
         }
       }, 'image/png');
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error accessing canvas for force save:', error);
     }
   };

@@ -31,7 +31,7 @@ export default function ReplayPage() {
   const [replayProgress, setReplayProgress] = useState(0);
   
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const animationRunningRef = useRef<boolean>(false);
   
   const roomState = useQuery(api.rooms.getRoomState, { roomId });

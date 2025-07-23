@@ -41,7 +41,7 @@ export default function DrawingCanvas({ isDrawing, onStrokeComplete, onStrokeUpd
   const lastUpdateTimeRef = useRef<number>(0);
   const updateThrottle = 50; // Update every 50ms for live streaming (more responsive)
   const batchedPointsRef = useRef<Point[]>([]);
-  const saveTimeoutRef = useRef<NodeJS.Timeout>();
+  const saveTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const colors = ['#000000', '#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500'];
 
